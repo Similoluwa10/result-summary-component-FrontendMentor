@@ -67,5 +67,5 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- By Gbenle Similoluwa
+- Gbenle Similoluwa
 
