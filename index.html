@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@400;700&family=Poppins:wght@600&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Results summary component</title>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+
+
+
+    .result-summary-component {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: auto;
+      width: 480px;
+      border-radius: 19px;
+      box-shadow: 2px 14px 22px 14px rgb(243, 247, 248);
+      margin-top: 140px;
+    }
+
+    .result-component {
+      background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      display: grid;
+      border-radius: 15px;
+      justify-content: center;
+      padding: 18px 15px;
+    }
+
+    .result-par {
+      text-align: center;
+      margin-bottom: px;
+      font-size: 15px;
+      color: hsl(241, 100%, 89%);
+      margin-top: 8px;
+    }
+
+    .result-div {
+      background-image: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsl(241, 82%, 56%, 0.01));
+      width: 100px;
+      height: 100px;
+      border-radius: 60px;
+      margin: auto;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .result {
+      font-size: 40px;
+      font-weight: bold;
+      color: hsl(0, 0%, 100%);
+      align-items: center;
+      margin-bottom: -38px;
+    }
+
+    .total-result {
+      color: hsla(240, 48%, 83%, 0.6);
+      font-size: 12px;
+      font-weight: bold;
+      width: 100%;
+      text-align: center;
+    }
+
+    .exclamation {
+      text-align: center;
+      font-size: 20px;
+      color: hsl(0, 0%, 100%);
+      margin-bottom: -8px;
+    }
+
+    .result-summary {
+      text-align: center;
+      font-size: 11px;
+      line-height: 14px;
+      color: hsl(240, 60%, 84%);
+      width: 162px;
+    }
+
+    .summary-component {
+      padding: 20px;
+    }
+
+    .summary-component img {
+      margin-right: 7px;
+    }
+
+    .summary-par {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .reaction-component,
+    .memory-component,
+    .verbal-component,
+    .visual-component {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .reaction-component {
+      background-color: hsla(0, 100%, 78%, 0.1);
+      padding: 7px 10px;
+      border-radius: 5px;
+    }
+
+    .reaction {
+      color: hsl(0, 100%, 67%);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .memory-component {
+      background-color: hsl(39, 100%, 56%, 0.1);
+      padding: 7px 10px;
+      border-radius: 5px;
+    }
+
+    .memory {
+      color: hsl(39, 100%, 56%);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .verbal-component {
+      background-color: hsl(166, 100%, 37%, 0.05);
+      padding: 7px 10px;
+      border-radius: 5px;
+    }
+
+    .verbal {
+      color: hsl(166, 100%, 37%);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .visual-component {
+      background-color: hsl(234, 85%, 45%, 0.05);
+      padding: 7px 10px;
+      border-radius: 5px;
+    }
+
+    .visual {
+      color: hsl(234, 85%, 45%);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+
+    .reaction-div,
+    .memory-div,
+    .verbal-div,
+    .visual-div {
+      display: flex;
+      align-items: center;
+    }
+
+    .act-score {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .tot-score {
+      color: hsl(240, 14%, 55%);
+      font-size: 14px;
+    }
+
+    .continue-btn {
+      color: hsl(0, 0%, 100%);
+      background-color: hsl(224, 30%, 27%);
+      border: none;
+      width: 100%;
+      padding: 13px 0px;
+      border-radius: 20px;
+      margin-top: 15px;
+      transition: 0.8s;
+    }
+
+    .continue-btn:hover {
+      background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .result-summary-component {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 265px;
+        margin-top: 50px;
+      }
+
+      .result-par {
+        margin-bottom: 18px;
+        font-size: 14px;
+      }
+
+      .result-div {
+        margin-bottom: 15px;
+      }
+
+      .exclamation {
+        font-size: 17px;
+        margin-bottom: -4px;
+      }
+
+      .result-summary {
+        width: 200px;
+        line-height: 15px;
+        font-size: 12px;
+      }
+
+      .summary-par {
+        font-size: 14px;
+      }
+
+      .reaction-component,
+      .memory-component,
+      .verbal-component,
+      .visual-component {
+        margin-bottom: 16px;
+      }
+
+      .act-score {
+        font-size: 13px;
+      }
+
+      .tot-score {
+        font-size: 13px;
+      }
+
+      .continue-btn {
+        margin-top: 5px;
+      }
+  </style>
+</head>
+
+<body>
+
+  <section>
+    <div class="result-summary-component">
+      <div class="result-component">
+        <span class="result-par">Your Result</span>
+
+        <div class="result-div">
+          
+            <span class="result" id="result">76</span>
+            <span class="total-result" id="total-result">of 100</span>
+          
+        </div>
+
+        <span class="exclamation">Great</span>
+
+        <p class="result-summary">
+          You scored higher than 65% of the
+          people who have taken these tests.
+        </p>
+      </div>
+
+      <div class="summary-component">
+        <div class="summary-par">Summary</div>
+
+        <div class="reaction-component">
+          <div class="reaction-div">
+            <img src="assets/images/icon-reaction.svg" alt="reaction-icon">
+            <span class="reaction">Reaction</span>
+          </div>
+          <div class="score">
+            <span class="act-score">80</span><span class="tot-score"> / 100</span>
+          </div>
+        </div>
+
+        <div class="memory-component">
+          <div class="memory-div">
+            <img src="assets/images/icon-memory.svg" alt="memory-icon">
+            <span class="memory">Memory</span>
+          </div>
+          <div class="score">
+            <span class="act-score">92</span><span class="tot-score"> / 100</span>
+          </div>
+        </div>
+
+        <div class="verbal-component">
+          <div class="verbal-div">
+            <img src="assets/images/icon-verbal.svg" alt="verbal-icon">
+            <span class="verbal">Verbal</span>
+          </div>
+          <div class="score">
+            <span class="act-score">61</span><span class="tot-score"> / 100</span>
+          </div>
+        </div>
+
+        <div class="visual-component">
+          <div class="visual-div">
+            <img src="assets/images/icon-visual.svg" alt="visual-icon">
+            <span class="visual">Visual</span>
+          </div>
+          <div class="score">
+            <span class="act-score">72</span><span class="tot-score"> / 100</span>
+          </div>
+        </div>
+
+        <button onclick="continueResult()" class="continue-btn">Continue</button>
+
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
